@@ -2,7 +2,7 @@
 Final Project Bootcamp Rakamin DS batch 27
 ## Descriptive Analysis
 
-A. Terdapat kolom dengan tipe data yang tidak sesuai
+A. Terdapat kolom dengan tipe data yang tidak sesuai diantaranya OperatingSystems, Browser, Region, dan TrafficType <br>
 
 B. Tidak terdapat nilai kosong pada tiap-tiap kolom
 
