@@ -9,9 +9,9 @@ A. Terdapat kolom dengan tipe data yang tidak sesuai diantaranya <br>
 - TrafficType <br>
 
 Nilai 
-''code
+'''code
 df = df.astype({'OperatingSystems': object, 'Browser': object, 'Region': object, 'TrafficType': object})
-''
+'''
 
 B. Tidak terdapat nilai kosong pada tiap-tiap kolom <br>
 
