@@ -8,7 +8,7 @@ A. Terdapat kolom dengan tipe data yang tidak sesuai diantaranya <br>
 - Region <br>
 - TrafficType <br>
 
-Nilai 
+Cara mengubah tipe data
 ```code
 df = df.astype({'OperatingSystems': object, 'Browser': object, 'Region': object, 'TrafficType': object})
 ```
