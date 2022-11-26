@@ -3,7 +3,8 @@ Final Project Bootcamp Rakamin DS batch 27
 ## Descriptive Analysis
 
 
-A. Terdapat kolom dengan tipe data yang tidak sesuai diantaranya: <br>
+### A. Tipe data pada tiap-tiap kolom <br>
+Terdapat kolom dengan tipe data yang tidak sesuai diantaranya: <br>
 - OperatingSystems <br> 
 - Browser <br>
 - Region <br>
@@ -28,7 +29,12 @@ categoricals = ['OperatingSystems', 'Browser', 'Region', 'TrafficType', 'Visitor
 timestamps   = ['Month']
 ```
 
-B. Tidak terdapat nilai kosong pada tiap-tiap kolom <br>
-Dengan menggunakan `df.isna().sum()` kita dapat melihat kolom apa saja yang memiliki nilai kosong
+### B. Nilai kosong pada tiap-tiap kolom <br>
+Dengan menggunakan `df.isna().sum()` kita dapat melihat kolom apa saja yang memiliki nilai kosong dan hasilnya tidak terdapat nilai kosong pada tiap-tiap kolom
 
-C. Terdapat nilai outlier di beberapa kolom seperti di kolom Informational, Informational_Duration, Page Values, Special Day
+### C. Nilai outlier <br>
+Positively skewed (Mean > Median):<br>
+- Positively skewed: Administrative, Administrative_Duration, Informational, Informational_Duration, Productrelated, ProductRelated_Duration, ExitRates, PageValues, SpecialDay<br> 
+
+Negatively skewed (Median > Mean):<br>
+- BounceRates
