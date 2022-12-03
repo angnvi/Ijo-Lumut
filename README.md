@@ -111,3 +111,42 @@ Hubungan antara jenis halaman dan durasi kunjungan
 User cenderung menghabiskan waktu lebih lama saat mengunjungi halaman Informational dibandingkan halaman Administrative
 User cenderung lebih sering mengunjungi halaman ProductRelated dibandingkan halaman lainnya
 Tidak dapat disegmentasi secara langsung apakah user akan melakukan pembelian atau tidak apabila dilihat dari jumlah kunjungan dan durasi pada halaman ProductRelated
+
+## Data Cleansing
+
+
+## Feature Engineering
+
+### Feature Selection
+Fitur yang kurang relevan dan redundan sehingga perlu dihilangkan:
+1. OperatingSystem
+2. Browser
+3. Region
+4. TrafficType
+5. BounceRates
+
+```code
+df_2 = df.drop(['OperatingSystems', 'Browser', 'Region', 'TrafficType', 'BounceRates'], axis=1)
+```
+
+Feature OperatingSystem, Browser, Region, TrafficType, TrafficType, BounceRates perlu dihilangkan karena setelah dilakukan hypothesis testing ternyata tidak begitu berpengaruh terhadap Revenue. Sedangkan BounceRates dihilangkan karena memiliki korelasi diatas 0.7 dengan ExitRates sehingga nilainya redundan.
+
+### Feature extraction
+Membuat Feature baru yaitu Average Time Page:
+1. Average Time Page Administrative
+2. Average Time Page Informational
+3. Average Time Page ProductRelated
+
+Average Time Page sendiri diambil dari nilai Page Duration/Page Value
+```code
+df_2['ATP_Administrative'] = df_2['Administrative_Duration']/df_2['Administrative']
+df_2['ATP_Informational'] = df_2['Informational_Duration']/df_2['Informational']
+df_2['ATP_ProductRelated'] = df_2['ProductRelated_Duration']/df_2['ProductRelated']
+```
+
+### Feature Tambahan
+Additional Feature yang disarankan untuk membantu membuat performansi model semakin bagus yaitu:
+1. Membership duration
+2. Favourite category
+3. Item bought per month
+4. Item bought in price per month
