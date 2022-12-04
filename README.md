@@ -121,15 +121,11 @@ Tidak dapat disegmentasi secara langsung apakah user akan melakukan pembelian at
 Fitur yang kurang relevan dan redundan sehingga perlu dihilangkan:
 1. OperatingSystem
 2. Browser
-3. Region
-4. TrafficType
-5. BounceRates
+3. TrafficType
+4. BounceRates
+5. VT Others
 
-```code
-df_2 = df.drop(['OperatingSystems', 'Browser', 'Region', 'TrafficType', 'BounceRates'], axis=1)
-```
-
-Feature OperatingSystem, Browser, Region, TrafficType, TrafficType, BounceRates perlu dihilangkan karena setelah dilakukan hypothesis testing ternyata tidak begitu berpengaruh terhadap Revenue. Sedangkan BounceRates dihilangkan karena memiliki korelasi diatas 0.7 dengan ExitRates sehingga nilainya redundan.
+Feature OperatingSystem, Browser, TrafficType perlu dihilangkan karena lebih menunjukkan nilai performance related dibandingkan customer behaviour. Sedangkan BounceRates dihilangkan karena memiliki korelasi diatas 0.7 dengan ExitRates sehingga nilainya redundan.
 
 ### Feature extraction
 Membuat Feature baru yaitu Average Time Page:
@@ -138,11 +134,6 @@ Membuat Feature baru yaitu Average Time Page:
 3. Average Time Page ProductRelated
 
 Average Time Page sendiri diambil dari nilai Page Duration/Page Value
-```code
-df_2['ATP_Administrative'] = df_2['Administrative_Duration']/df_2['Administrative']
-df_2['ATP_Informational'] = df_2['Informational_Duration']/df_2['Informational']
-df_2['ATP_ProductRelated'] = df_2['ProductRelated_Duration']/df_2['ProductRelated']
-```
 
 ### Feature Tambahan
 Additional Feature yang disarankan untuk membantu membuat performansi model semakin bagus yaitu:
